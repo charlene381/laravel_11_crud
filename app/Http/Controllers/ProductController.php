@@ -50,20 +50,15 @@ RedirectResponse
  /**
  * Update the specified resource in storage.
  */
- public function update(UpdateProductRequest $request, Product
-$product) : RedirectResponse
- {
+ public function update(UpdateProductRequest $request, Product$product) : RedirectResponse{
  $product->update($request->validated());
- return redirect()->back()
- ->withSuccess('Product is updated successfully.');
+ return redirect()->back()->withSuccess('Product is updated successfully.');
  }
  /**
  * Remove the specified resource from storage.
  */
- public function destroy(Product $product) : RedirectResponse
- {
+ public function destroy(Product $product) : RedirectResponse{
  $product->delete();
- return redirect()->route('products.index')
- ->withSuccess('Product is deleted successfully.');
+ return redirect()->route('products.index')->withSuccess('Product is deleted successfully.');
  }
 }
